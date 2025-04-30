@@ -1,22 +1,30 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
+import { Icon, divIcon } from "leaflet";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
-import Card from "../components/Card";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Card from "./Card";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import mqtt from "mqtt";
 
-// Create icon outside component to prevent recreating on each render
+// Default Leaflet marker icon
 const defaultIcon = new Icon({
   iconUrl: markerIcon,
   shadowUrl: markerShadow,
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
+});
+
+// Offline grey icon
+const offlineIcon = new Icon({
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/565/565547.png",
+  iconSize: [25, 25],
+  iconAnchor: [12, 25],
+  popupAnchor: [1, -20],
 });
 
 function Dashboard() {
@@ -32,17 +40,7 @@ function Dashboard() {
   });
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
-  const handleFilterChange = (newFilters) => {
-    setFilters(newFilters);
-    console.log("Filters updated:", newFilters);
-  };
-
-  const nodes = [
+  const [nodes, setNodes] = useState([
     {
       id: "Node1",
       position: [23.12926974316946, 79.87484603838551],
@@ -79,7 +77,14 @@ function Dashboard() {
       humidity: 0,
       lastUpdated: null,
     },
-  ];
+  ]);
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
+  const handleFilterChange = (newFilters) => {
+    setFilters(newFilters);
+    console.log("Filters updated:", newFilters);
+  };
 
   const getAqiLevel = (aqi) => {
     if (aqi <= 50) return "good";
@@ -94,7 +99,7 @@ function Dashboard() {
       const level = getAqiLevel(node.AQI);
       return filters.aqiLevels[level];
     });
-  }, [filters.aqiLevels]);
+  }, [nodes, filters.aqiLevels]);
 
   // MQTT Setup + Node Updates
   useEffect(() => {
@@ -141,6 +146,13 @@ function Dashboard() {
     return () => client.end();
   }, []);
 
+  // Marker icon based on last update
+  const getNodeIcon = (node) => {
+    const isOffline =
+      !node.lastUpdated || Date.now() - node.lastUpdated > 15000; // 15 sec
+    return isOffline ? offlineIcon : defaultIcon;
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar toggleSidebar={toggleSidebar} />
@@ -164,7 +176,11 @@ function Dashboard() {
             />
 
             {filteredNodes.map((node) => (
-              <Marker key={node.id} position={node.position} icon={defaultIcon}>
+              <Marker
+                key={node.id}
+                position={node.position}
+                icon={getNodeIcon(node)}
+              >
                 <Popup>
                   <div className="popup-content">
                     <Card
@@ -174,8 +190,26 @@ function Dashboard() {
                       co={node.CO}
                       smoke={node.smoke}
                       pm25={node.pm25}
+                      temperature={node.temperature}
+                      humidity={node.humidity}
                       filters={filters}
                     />
+                    {node.lastUpdated ? (
+                      <p style={{ fontSize: "12px", marginTop: "5px" }}>
+                        Last Updated:{" "}
+                        {new Date(node.lastUpdated).toLocaleTimeString()}
+                      </p>
+                    ) : (
+                      <p
+                        style={{
+                          fontSize: "12px",
+                          marginTop: "5px",
+                          color: "red",
+                        }}
+                      >
+                        Node Offline
+                      </p>
+                    )}
                   </div>
                 </Popup>
               </Marker>
