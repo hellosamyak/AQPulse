@@ -62,7 +62,7 @@ function Navbar({ toggleSidebar }) {
                 className="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300 cursor-pointer mr-2"
                 onClick={toggleSidebar}
               >
-                <Menu className="w-6 h-6 text-white" />
+                <Funnel className="w-6 h-6 text-white" />
               </div>
             )}
             <button
