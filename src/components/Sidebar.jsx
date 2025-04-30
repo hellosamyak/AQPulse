@@ -17,7 +17,6 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
     },
   });
 
-  // Handle checkbox changes
   const handlePollutantChange = (pollutant) => {
     const updatedFilters = {
       ...filters,
@@ -27,10 +26,7 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
       },
     };
     setFilters(updatedFilters);
-
-    if (onFilterChange) {
-      onFilterChange(updatedFilters);
-    }
+    onFilterChange?.(updatedFilters);
   };
 
   const handleAQILevelChange = (level) => {
@@ -42,10 +38,7 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
       },
     };
     setFilters(updatedFilters);
-
-    if (onFilterChange) {
-      onFilterChange(updatedFilters);
-    }
+    onFilterChange?.(updatedFilters);
   };
 
   const Checkbox = ({ checked, onChange, label, color }) => (
@@ -110,26 +103,22 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
         {/* Pollutants */}
         <div className="mb-8">
           <h3 className="text-base text-cyan-400 mb-4">Pollutants</h3>
-
           <div className="space-y-1">
             <Checkbox
               checked={filters.pollutants.co2}
               onChange={() => handlePollutantChange("co2")}
               label="CO₂"
             />
-
             <Checkbox
               checked={filters.pollutants.co}
               onChange={() => handlePollutantChange("co")}
               label="CO"
             />
-
             <Checkbox
               checked={filters.pollutants.smoke}
               onChange={() => handlePollutantChange("smoke")}
               label="Smoke"
             />
-
             <Checkbox
               checked={filters.pollutants.pm25}
               onChange={() => handlePollutantChange("pm25")}
@@ -141,7 +130,6 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
         {/* AQI Level */}
         <div className="mb-8">
           <h3 className="text-base text-cyan-400 mb-4">AQI Level</h3>
-
           <div className="space-y-1">
             <Checkbox
               checked={filters.aqiLevels.good}
@@ -149,28 +137,24 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
               label="Good"
               color="bg-green-600"
             />
-
             <Checkbox
               checked={filters.aqiLevels.moderate}
               onChange={() => handleAQILevelChange("moderate")}
               label="Moderate"
               color="bg-teal-600"
             />
-
             <Checkbox
               checked={filters.aqiLevels.unhealthySensitive}
               onChange={() => handleAQILevelChange("unhealthySensitive")}
               label="Unhealthy for sensitive groups"
               color="bg-yellow-600"
             />
-
             <Checkbox
               checked={filters.aqiLevels.unhealthy}
               onChange={() => handleAQILevelChange("unhealthy")}
               label="Unhealthy"
               color="bg-orange-600"
             />
-
             <Checkbox
               checked={filters.aqiLevels.veryUnhealthy}
               onChange={() => handleAQILevelChange("veryUnhealthy")}
@@ -183,28 +167,23 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
         {/* Legend */}
         <div className="mt-auto">
           <h3 className="text-base font-semibold mb-4">LEGEND</h3>
-
           <div className="space-y-2">
             <div className="flex items-center">
               <div className="w-4 h-4 rounded-full bg-green-500 mr-2"></div>
               <span className="text-base">0 - 50</span>
             </div>
-
             <div className="flex items-center">
               <div className="w-4 h-4 rounded-full bg-teal-500 mr-2"></div>
               <span className="text-base">51 - 100</span>
             </div>
-
             <div className="flex items-center">
               <div className="w-4 h-4 rounded-full bg-yellow-500 mr-2"></div>
               <span className="text-base">Unhealthy for sensitive groups</span>
             </div>
-
             <div className="flex items-center">
               <div className="w-4 h-4 rounded-full bg-orange-500 mr-2"></div>
               <span className="text-base">Unhealthy</span>
             </div>
-
             <div className="flex items-center">
               <div className="w-4 h-4 rounded-full bg-red-500 mr-2"></div>
               <span className="text-base">Very unhealthy</span>

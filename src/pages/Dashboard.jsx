@@ -4,10 +4,10 @@ import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
-import Card from "./Card";
-import Sidebar from "./Sidebar";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Card from "../components/Card";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // Create icon outside component to prevent recreating on each render
 const defaultIcon = new Icon({
