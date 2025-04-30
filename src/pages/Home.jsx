@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero";
+import NavigateButton from "../components/NavigateButton"; // Adjust the path as needed
 import {
   ChartLine,
   History,
@@ -193,12 +194,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <button
+              <NavigateButton
+                to="/about"
                 className="px-8 py-4 bg-cyan-500 text-white font-semibold rounded-lg cursor-pointer text-lg hover:bg-cyan-600 transition transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50"
-                onClick={() => (window.location.href = "/about")}
               >
                 Learn More About the Project
-              </button>
+              </NavigateButton>
             </div>
           </div>
         </div>
@@ -208,12 +209,12 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
             Ready to explore the data in detail?
           </h2>
-          <button
+          <NavigateButton
+            to="/dashboard"
             className="px-10 py-5 bg-cyan-500 text-white text-xl font-semibold rounded-lg cursor-pointer hover:bg-cyan-600 transition transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50"
-            onClick={() => (window.location.href = "/dashboard")}
           >
             Access the Dashboard
-          </button>
+          </NavigateButton>
         </div>
       </section>
     </div>
