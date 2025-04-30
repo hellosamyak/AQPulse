@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CloudLightning, Github } from "lucide-react";
 
 export default function Footer() {
@@ -15,18 +16,18 @@ export default function Footer() {
             </h3>
           </div>
           <div className="flex space-x-6">
-            <a
-              href="/dashboard"
+            <Link
+              to="/dashboard"
               className="text-gray-300 text-lg hover:text-cyan-400 transition"
             >
               Dashboard
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               className="text-gray-300 text-lg hover:text-cyan-400 transition"
             >
               About
-            </a>
+            </Link>
             <a
               href="https://github.com/hellosamyak/AQPulse"
               className="text-gray-300 text-lg hover:text-cyan-400 transition"
