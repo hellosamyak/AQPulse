@@ -12,7 +12,7 @@ export default function About() {
   const teamMembers = [
     {
       name: "Aniket Kori",
-      role: "Hardware Expert (IoT), Founder",
+      role: "Hardware Expert (IoT), Founder (Batch: 2022-2026)",
       description:
         "Conceptualized and led the development of the AQI Monitoring System; designed and integrated microcontrollers, sensors, and communication modules for real-time air quality data acquisition and transmission.",
       image: "/p3.jpeg",
@@ -21,7 +21,7 @@ export default function About() {
     },
     {
       name: "Priyanshi Kapse",
-      role: "Fullstack Developer, Co-founder",
+      role: "Fullstack Developer, Co-founder (Batch: 2022-2026)",
       description:
         "Architected and developed the backend infrastructure to securely handle IoT data streams, implemented REST APIs and database schemas for efficient storage and retrieval; contributed to team strategy and project direction.",
       image: "/p2.jpeg",
@@ -30,7 +30,7 @@ export default function About() {
     },
     {
       name: "Aman Raj Tiwari",
-      role: "Fullstack Developer",
+      role: "Fullstack Developer (Batch: 2022-2026)",
       description:
         "Built and optimized MQTT-based communication between microcontrollers and server; programmed microcontrollers for sensor data collection and device management; contributed to backend & frontend development.",
       image: "/p1.jpeg",
@@ -39,7 +39,7 @@ export default function About() {
     },
     {
       name: "Kashish Bhatt",
-      role: "Presentation and Communication Lead",
+      role: "Presentation and Communication Lead (Batch: 2022-2026)",
       description:
         "Managed project documentation, presentation design, and faculty communication; coordinated between hardware and software teams to ensure consistent technical messaging.",
       image: "/p4.jpeg",
@@ -48,7 +48,7 @@ export default function About() {
     },
     {
       name: "Samyak Jain",
-      role: "Frontend Developer",
+      role: "Frontend Developer (Batch: 2023-2027)",
       description:
         "Designed and developed a fully responsive web interface with real-time AQI visualization; integrated interactive maps and all system functionalities for a seamless user experience.",
       image: "/p5.png",
