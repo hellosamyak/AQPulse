@@ -1,11 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AQPulse: AQI Monitoring</title>
   <link rel="icon" href="/favicon.png" type="image/png" />
+  <script>
+    // Apply theme before rendering to prevent FOUC
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const isDark =
+        savedTheme === 'dark' ||
+        (savedTheme !== 'light' &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
 </head>
 
 <body>

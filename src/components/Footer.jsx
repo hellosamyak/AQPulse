@@ -1,42 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CloudLightning, Github } from "lucide-react";
+import { CloudLightning } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 bg-black border-t border-gray-800">
-      <div className="max-w-6xl mx-auto">
+    <footer className="py-12 bg-white dark:bg-black border-t border-gray-300 dark:border-gray-800 transition-colors">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex items-center mb-6 md:mb-0">
-            <CloudLightning size={32} className="text-cyan-400 mr-3" />
-            <h3 className="text-2xl font-bold text-white">
-              <span className="text-cyan-400">AQ</span>Pulse
+            <CloudLightning
+              size={32}
+              className="text-blue-600 mr-3 dark:text-cyan-400"
+            />
+            <h3 className="text-2xl font-bold text-black dark:text-white">
+              <span className="text-blue-600 dark:text-cyan-400">AQ</span>Pulse
             </h3>
           </div>
           <div className="flex space-x-6">
             <Link
               to="/dashboard"
-              className="text-gray-300 text-lg hover:text-cyan-400 transition"
+              className="text-black dark:text-gray-300 text-lg hover:text-blue-600 dark:hover:text-cyan-400 transition"
             >
               Dashboard
             </Link>
             <Link
               to="/about"
-              className="text-gray-300 text-lg hover:text-cyan-400 transition"
+              className="text-black dark:text-gray-300 text-lg hover:text-blue-600 dark:hover:text-cyan-400 transition"
             >
               About
             </Link>
             <a
               href="https://github.com/hellosamyak/AQPulse"
-              className="text-gray-300 text-lg hover:text-cyan-400 transition"
+              className="text-black dark:text-gray-300 text-lg hover:text-blue-600 dark:hover:text-cyan-400 transition"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Github
             </a>
           </div>
         </div>
-        <div className="text-center flex justify-center md:text-left text-gray-400 text-lg">
+        <div className="text-center text-black dark:text-gray-400 text-lg">
           <p>
             © {currentYear} Team QudraTECH, Dept. of CS-IoTCSBT, GGITS. All
             rights reserved.
