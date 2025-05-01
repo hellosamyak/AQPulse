@@ -131,15 +131,42 @@ export default function About() {
         <section className="bg-gray-800/50 rounded-xl p-6 md:p-8 text-center">
           <h2 className="text-3xl font-semibold mb-4">Technology Stack</h2>
           <p className="text-gray-300 text-xl mb-4">
-            AQPulse combines cutting-edge hardware and software technologies:
+            AQPulse integrates both hardware and software technologies for
+            real-time air quality monitoring:
           </p>
-          <ul className="list-inside text-lg text-center max-w-2xl mx-auto text-cyan-500 space-y-2">
-            <li>Frontend: React</li>
-            <li>Backend: Node.js</li>
-            <li>Hosting: Vercel and AWS</li>
-            <li>Communication: MQTT</li>
-            <li>Maps Integration: Leaflet</li>
-            <li>Version Control: Git and GitHub</li>
+          <ul className="list-disc text-lg text-center max-w-2xl mx-auto space-y-2">
+            <li>
+              <span className="text-cyan-500 font-semibold">Hardware: </span>
+              ESP32 microcontrollers, MQ-series gas sensors, DHT11/22 sensors
+              for temperature & humidity, and Wi-Fi modules for connectivity
+            </li>
+            <li>
+              <span className="text-cyan-500 font-semibold">
+                Communication Protocol:{" "}
+              </span>
+              MQTT for efficient IoT data transmission
+            </li>
+            <li>
+              <span className="text-cyan-500 font-semibold">Frontend: </span>
+              React (responsive interface with real-time AQI and map
+              visualization using Leaflet)
+            </li>
+            <li>
+              <span className="text-cyan-500 font-semibold">Backend: </span>
+              Node.js (API and data handling)
+            </li>
+            <li>
+              <span className="text-cyan-500 font-semibold">
+                Hosting & Cloud:{" "}
+              </span>
+              Vercel (frontend), AWS (backend and database)
+            </li>
+            <li>
+              <span className="text-cyan-500 font-semibold">
+                Version Control:{" "}
+              </span>
+              Git and GitHub
+            </li>
           </ul>
         </section>
         <section className="space-y-12">
