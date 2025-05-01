@@ -14,7 +14,7 @@ export default function About() {
       name: "Aniket Kori",
       role: "Hardware Expert (IoT), Founder",
       description:
-        "Initiated AQPULSE and led the design and deployment of the IoT hardware system, integrating sensors and microcontrollers for accurate AQI monitoring.",
+        "Conceptualized and led the development of the AQI Monitoring System; designed and integrated microcontrollers, sensors, and communication modules for real-time air quality data acquisition and transmission.",
       image: "/p3.jpeg",
       linkedin: "https://www.linkedin.com/in/aniket-kori",
       github: "",
@@ -23,7 +23,7 @@ export default function About() {
       name: "Priyanshi Kapse",
       role: "Fullstack Developer, Co-founder",
       description:
-        "Built both backend and hardware connections, data to the cloud, and contributed to team strategy and project direction.",
+        "Architected and developed the backend infrastructure to securely handle IoT data streams, implemented REST APIs and database schemas for efficient storage and retrieval; contributed to team strategy and project direction.",
       image: "/p2.jpeg",
       linkedin: "",
       github: "",
@@ -32,7 +32,7 @@ export default function About() {
       name: "Aman Raj Tiwari",
       role: "Fullstack Developer",
       description:
-        "Focused on backend services, API development, and data handling to ensure smooth communication between hardware and the web platform.",
+        "Built and optimized MQTT-based communication between microcontrollers and server; programmed microcontrollers for sensor data collection and device management; contributed to backend & frontend development.",
       image: "/p1.jpeg",
       linkedin: "",
       github: "https://github.com/Aman99ART",
@@ -41,7 +41,7 @@ export default function About() {
       name: "Kashish Bhatt",
       role: "Presentation and Communication Lead",
       description:
-        "Handled project documentation, presentation design, and external communication to effectively showcase AQPULSE to larger audience.",
+        "Managed project documentation, presentation design, and faculty communication; coordinated between hardware and software teams to ensure consistent technical messaging.",
       image: "/p4.jpeg",
       linkedin: "",
       github: "",
@@ -50,7 +50,7 @@ export default function About() {
       name: "Samyak Jain",
       role: "Frontend Developer",
       description:
-        "Designed and developed the complete web interface for AQPULSE, ensuring real-time AQI data visualization in a clean, responsive UI.",
+        "Designed and developed a fully responsive web interface with real-time AQI visualization; integrated interactive maps and all system functionalities for a seamless user experience.",
       image: "/p5.png",
       linkedin: "https://www.linkedin.com/in/samyak-jain-sj1208/",
       github: "https://github.com/hellosamyak",
