@@ -224,7 +224,7 @@ export default function About() {
                   } items-center bg-gradient-to-b from-gray-50 dark:from-gray-800/50 to-white dark:to-gray-900/50`}
                 >
                   <div className="w-full md:w-1/3 aspect-[4/3] p-4">
-                    <div className="relative w-full h-full rounded-lg overflow-hidden border-2 border-cyan-500/30 shadow-md">
+                    <div className="relative w-full h-full rounded-lg overflow-hidden border-2 border-blue-500/50 dark:border-cyan-500/30 shadow-md">
                       <img
                         src={member.image}
                         alt={member.name}

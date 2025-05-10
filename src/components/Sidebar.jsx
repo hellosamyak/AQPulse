@@ -51,7 +51,7 @@ function Sidebar({ isOpen, onClose, onFilterChange }) {
       >
         {checked && (
           <svg
-            className="w-4 h-4 text-cyan-300"
+            className="w-4 h-4 text-white dark:text-cyan-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

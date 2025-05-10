@@ -44,25 +44,29 @@ function Card({ nodeId, aqi, co2, co, smoke, pm25, filters }) {
             <span className="text-gray-600 dark:text-gray-300">
               CO<sub>2</sub>
             </span>
-            <span className="text-cyan-500">{co2} ppm</span>
+            <span className="text-blue-500 dark:text-cyan-500">{co2} ppm</span>
           </div>
         )}
         {filters?.pollutants.co && (
           <div className="flex justify-between">
             <span className="text-gray-600 dark:text-gray-300">CO</span>
-            <span className="text-cyan-500">{co} ppm</span>
+            <span className="text-blue-500 dark:text-cyan-500">{co} ppm</span>
           </div>
         )}
         {filters?.pollutants.smoke && (
           <div className="flex justify-between">
             <span className="text-gray-600 dark:text-gray-300">Smoke</span>
-            <span className="text-cyan-500">{smoke} ppm</span>
+            <span className="text-blue-500 dark:text-cyan-500">
+              {smoke} ppm
+            </span>
           </div>
         )}
         {filters?.pollutants.pm25 && (
           <div className="flex justify-between">
             <span className="text-gray-600 dark:text-gray-300">PM 2.5</span>
-            <span className="text-cyan-500">{pm25} μg/m³</span>
+            <span className="text-blue-500 dark:text-cyan-500">
+              {pm25} μg/m³
+            </span>
           </div>
         )}
       </div>
@@ -81,7 +85,7 @@ function Card({ nodeId, aqi, co2, co, smoke, pm25, filters }) {
         </div>
       </div>
 
-      <div className="mt-4 text-xs text-cyan-500">
+      <div className="mt-4 text-xs text-blue-500 dark:text-cyan-500">
         Last updated: 5 seconds ago
       </div>
     </div>
