@@ -97,7 +97,7 @@ function Navbar({ toggleSidebar }) {
               className={({ isActive }) =>
                 `text-lg font-medium transition-colors ${
                   isActive
-                    ? "text-cyan-400"
+                    ? "text-blue-600 dark:text-cyan-400"
                     : "text-black dark:text-white hover:text-cyan-400"
                 }`
               }
